@@ -175,7 +175,7 @@ module.exports.promiseAllObj = function(promisesObj) {
     return Promise
         .all(promises)
         .then(function(values) {
-            return _.assignIn.call(arguments);
+            return _.assignIn.apply(this, values);
         });
 };
 module.exports.promiseTime = function(promise, label) {
